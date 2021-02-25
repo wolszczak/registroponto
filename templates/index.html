@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<!-- <body>
+  <h1>Live Video</h1>
+  <img id="bg" src="{{ url_for('video_feed') }}" width="320" height="240">
+</body> -->
+
+<div ng-app="registro" ng-controller="HomeController">
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--11-col">
+      <img id="bg" src="{{ url_for('video_feed') }}" width="520" height="360">
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+      <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
+        <thead>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Data</th>
+        </thead>
+        <tbody>
+          <tr mdbTableCol ng-repeat="x in lista">
+            <th scope="row">{% raw %}{{x.id}}{% endraw %}</th>
+            <td>{% raw %}{{x.nome}}{% endraw %}</td>
+            <td>{% raw %}{{x.data}}{% endraw %}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="../static/controllers/HomeController.js"></script>
+
+{% endblock %}
