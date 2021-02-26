@@ -24,11 +24,9 @@ class StreamRecognizer:
         self.video.release()
 
     def get_frame(self):
-        # extracting frames
+        # lê e converte o frame de BGR para RGB e redimensiona o width para 500px (acelera o processamento)
         ret, frame = self.video.read()
         frame = imutils.resize(frame, width=500)
-
-        # converte o frame de BGR para RGB e redimensiona o width para 750px (acelera o processamento)
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
