@@ -1,1 +1,1 @@
-python-opencv
+opencv-python-headless==4.2.0.32
